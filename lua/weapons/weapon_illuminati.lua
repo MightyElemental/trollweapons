@@ -123,11 +123,11 @@ function SWEP:FireAnimationEvent( pos, ang, event )
 end
 
 function SWEP:OnRemove()
-	self:KillSounds()
+	
 end
 
 function SWEP:OnDrop()
-	self:KillSounds()
+	
 end
 
 function SWEP:Deploy()
