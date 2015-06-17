@@ -142,7 +142,7 @@ function SWEP:Deploy()
 end
 
 function SWEP:Holster()
-	self:KillSounds()
+
 	return true
 end
 
@@ -176,7 +176,7 @@ end
 
 if ( SERVER ) then return end
 
-killicon.Add( "weapon_mlgsmg", "illuminati/killicon", color_white )
+killicon.Add( "weapon_illuminati", "illuminati/killicon", color_white )
 
 SWEP.WepSelectIcon = Material( "illuminati/selection.png" )
 

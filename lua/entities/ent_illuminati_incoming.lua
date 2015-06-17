@@ -5,7 +5,7 @@ ENT.Type = "anim"
 ENT.Base = "base_anim"
 ENT.Spawnable = false
 
-local bomb = Material( "mlg/mlg3.png" )
+local bomb = Material( "illuminati/illuminati.png" )
 
 function ENT:Draw()
 	local vel = self:GetVelocity()
@@ -28,18 +28,13 @@ function ENT:Draw()
 
 end
 
-if ( CLIENT ) then killicon.Add( "ent_illuminati_incomming", "mlg/killicon_illuminati", color_white ) return end
+if ( CLIENT ) then killicon.Add( "ent_illuminati_incomming", "illuminati/illuminati", color_white ) return end
 
 function ENT:Initialize()
 	self:SetModel( "models/props_c17/SuitCase001a.mdl" )
 	self:PhysicsInitSphere( 6, "metal" )
 	self:SetMoveType( MOVETYPE_VPHYSICS )
 	self:SetSolid( SOLID_VPHYSICS )
-	
-	local sw = 16
-	local ew = 0
-	
-	self.Trail = util.SpriteTrail( self, 0, color_white, false, sw, ew, 1, 1 / ( sw + ew ) * 0.5, "mlg/doritotrail.vmt" )
 end
 
 function ENT:PhysicsCollide( data, physobj )

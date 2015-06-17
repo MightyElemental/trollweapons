@@ -5,7 +5,7 @@ ENT.Type = "anim"
 ENT.Base = "base_anim"
 ENT.Spawnable = false
 
-local bomb = Material( "mlg/mlg3.png" )
+local bomb = Material( "illuminati/illuminati.png" )
 
 function ENT:Draw()
 	local vel = self:GetVelocity()
@@ -28,7 +28,7 @@ function ENT:Draw()
 
 end
 
-if ( CLIENT ) then killicon.Add( "ent_illuminati_confirmed", "mlg/killicon_illuminati", color_white ) return end
+if ( CLIENT ) then killicon.Add( "ent_illuminati_confirmed", "illuminati/killicon", color_white ) return end
 
 function ENT:Initialize()
 	self:SetModel( "models/props_c17/SuitCase001a.mdl" )
