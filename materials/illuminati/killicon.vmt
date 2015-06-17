@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "mlg/killicon_illuminati"
+	"$basetexture" "illuminati/killicon"
 	"$translucent" 1
 	"$alpha" 1
 	"$vertexcolor" 1

@@ -63,7 +63,7 @@ function SWEP:PrimaryAttack()
 			end
 		end
 		
-		self:EmitSound( "weapons/illuminati/illuminati.wav", 100, math.random( 95, 105 ) )
+		self:EmitSound( "illuminati/illuminati.wav", 100, math.random( 95, 105 ) )
 		
 		self:SetNextPrimaryFire( CurTime() + self.Primary.Delay+3 )
 		self:SetNextSecondaryFire( CurTime() + self.Primary.Delay+3 )
@@ -97,7 +97,7 @@ function SWEP:SecondaryAttack()
 									phys:AddVelocity( ent:GetUp() ) 
 								end
 							end
-							self:EmitSound( "weapons/illuminati/horn_long.wav", 100, math.random( 60, 80 ) )
+							self:EmitSound( "illuminati/horn_long.wav", 100, math.random( 60, 80 ) )
 						end
 					end)
 			end
@@ -118,22 +118,8 @@ function SWEP:Reload()
 	return
 end
 
-function SWEP:DoImpactEffect( trace, damageType )
-	local effectdata = EffectData()
-	effectdata:SetStart( trace.HitPos )
-	effectdata:SetOrigin( trace.HitNormal + Vector( math.Rand( -0.5, 0.5 ), math.Rand( -0.5, 0.5 ), math.Rand( -0.5, 0.5 ) ) )
-	util.Effect( "mighty_mlg_bounce", effectdata )
-
-	return true
-end
-
 function SWEP:FireAnimationEvent( pos, ang, event )
 	return true
-end
-
-function SWEP:KillSounds()
-	if ( self.BeatSound ) then self.BeatSound:Stop() self.BeatSound = nil end
-	if ( self.LoopSound ) then self.LoopSound:Stop() self.LoopSound = nil end
 end
 
 function SWEP:OnRemove()
@@ -168,11 +154,6 @@ function SWEP:Think()
 		self:Idle()
 
 	end
-
-	if ( self.Owner:IsPlayer() && ( self.Owner:KeyReleased( IN_ATTACK ) || !self.Owner:KeyDown( IN_ATTACK ) ) ) then
-		if ( self.LoopSound ) then self.LoopSound:ChangeVolume( 0, 0.1 ) end
-		if ( self.BeatSound ) then self.BeatSound:ChangeVolume( 1, 0.1 ) end
-	end
 end
 
 function SWEP:DoIdleAnimation()
@@ -187,15 +168,17 @@ end
 
 function SWEP:GetAnimationTime()
 	local time = self:SequenceDuration()
-	if ( time == 0 && IsValid( self.Owner ) && !self.Owner:IsNPC() && IsValid( self.Owner:GetViewModel() ) ) then time = self.Owner:GetViewModel():SequenceDuration() end
+	if ( time == 0 && IsValid( self.Owner ) && !self.Owner:IsNPC() && IsValid( self.Owner:GetViewModel() ) ) then 
+		time = self.Owner:GetViewModel():SequenceDuration() 
+	end
 	return time
 end
 
 if ( SERVER ) then return end
 
-killicon.Add( "weapon_mlgsmg", "mlg/killicon", color_white )
+killicon.Add( "weapon_mlgsmg", "illuminati/killicon", color_white )
 
-SWEP.WepSelectIcon = Material( "mlg/selection.png" )
+SWEP.WepSelectIcon = Material( "illuminati/selection.png" )
 
 function SWEP:DrawWeaponSelection( x, y, w, h, a )
 	surface.SetDrawColor( 255, 255, 255, a )
