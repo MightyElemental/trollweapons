@@ -6,12 +6,11 @@ SWEP.SlotPos = 5
 SWEP.DrawWeaponInfoBox = false
 
 SWEP.Base = "weapon_base"
-SWEP.PrintName = "Illuminati Pistol"
+SWEP.PrintName = "Annoying Sound Pistol"
 SWEP.Category = "Troll Weapons"
 SWEP.ViewModel = "models/weapons/c_pistol.mdl"
 SWEP.WorldModel = "models/weapons/w_pistol.mdl"
-SWEP.Spawnable = false
-SWEP.AdminSpawnable = true
+SWEP.Spawnable = true
 SWEP.AutoSwitchTo = false
 SWEP.AutoSwitchFrom = false
 SWEP.ViewModelFOV = 54
@@ -112,7 +111,7 @@ end
 
 if ( SERVER ) then return end
 
-killicon.Add( "weapon_illuminati", "illuminati/killicon", color_white )
+killicon.Add( "weapon_annoying_sounds", "annoying/killicon", color_white )
 
 SWEP.WepSelectIcon = Material( "annoying/selection.png" )
 
