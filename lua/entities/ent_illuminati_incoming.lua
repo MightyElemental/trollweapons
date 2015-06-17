@@ -5,7 +5,7 @@ ENT.Type = "anim"
 ENT.Base = "base_anim"
 ENT.Spawnable = false
 
-local bomb = Material( "illuminati/illuminati.png" )
+local illumi = Material( "illuminati/illuminati.png" )
 
 function ENT:Draw()
 	local vel = self:GetVelocity()
@@ -20,10 +20,10 @@ function ENT:Draw()
 	
 	surface.SetDrawColor( color_white )
 	
-	render.SetMaterial( bomb )
+	render.SetMaterial( illumi )
 	render.DrawQuadEasy( self:GetPos(), vel , 64, 64, color_white, -90 + vz )
 
-	render.SetMaterial( bomb )
+	render.SetMaterial( illumi )
 	render.DrawQuadEasy( self:GetPos(), -vel, 64, 64, color_white, -90 - vz )
 
 end
