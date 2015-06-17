@@ -1,0 +1,11 @@
+{
+	"title"		:	"Illuminati Pistol",
+	"type"		:	"weapon",
+	"tags"		:	[ "fun", "comic" ],
+	"ignore"	:
+	[
+		"*.psd",
+		"*.vcproj",
+		"*.svn*"
+	]
+}
